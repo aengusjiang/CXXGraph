@@ -1,0 +1,383 @@
+benchmark/Utilities.hpp:11:9: style: The scope of the variable 'randomNumber' can be reduced. [variableScope]
+    int randomNumber;
+        ^
+benchmark/Utilities.hpp:25:9: style: The scope of the variable 'randomNumber1' can be reduced. [variableScope]
+    int randomNumber1;
+        ^
+benchmark/Utilities.hpp:26:9: style: The scope of the variable 'randomNumber2' can be reduced. [variableScope]
+    int randomNumber2;
+        ^
+benchmark/Utilities.hpp:42:9: style: The scope of the variable 'randomNumber1' can be reduced. [variableScope]
+    int randomNumber1;
+        ^
+benchmark/Utilities.hpp:43:9: style: The scope of the variable 'randomNumber2' can be reduced. [variableScope]
+    int randomNumber2;
+        ^
+benchmark/Utilities.hpp:9:52: style: Local variable 'nodes' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/BFS_BM.cpp:5:13: note: Shadowed declaration
+static auto nodes = generateRandomNodes(100000, 2);
+            ^
+benchmark/Utilities.hpp:9:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/Utilities.hpp:23:52: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/BFS_BM.cpp:6:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:23:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/Utilities.hpp:40:62: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/BFS_BM.cpp:6:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:40:62: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/Utilities.hpp:57:27: style: Local variable 'graph_ptr' shadows outer variable [shadowVariable]
+    CXXGRAPH::Graph<int> *graph_ptr = new CXXGRAPH::Graph<int>();
+                          ^
+benchmark/BFS_BM.cpp:7:13: note: Shadowed declaration
+static auto graph_ptr = readGraph("CitHepPh");
+            ^
+benchmark/Utilities.hpp:57:27: note: Shadow variable
+    CXXGRAPH::Graph<int> *graph_ptr = new CXXGRAPH::Graph<int>();
+                          ^
+benchmark/BFS_BM.cpp:27:52: style: Parameter 'state' can be declared with const. However it seems that 'BFS_FromReadedCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BFS_FromReadedCitHep(benchmark::State &state)
+                                                   ^
+benchmark/BFS_BM.cpp:37:11: note: You might need to cast the function pointer here
+BENCHMARK(BFS_FromReadedCitHep);
+          ^
+benchmark/BFS_BM.cpp:27:52: note: Parameter 'state' can be declared with const
+static void BFS_FromReadedCitHep(benchmark::State &state)
+                                                   ^
+benchmark/Utilities.hpp:58:17: style: Variable 'result' is assigned a value that is never used. [unreadVariable]
+    auto result = graph_ptr->readFromFile(CXXGRAPH::InputOutputFormat::STANDARD_CSV, "../benchmark/dataset", filename);
+                ^
+benchmark/Utilities.hpp:9:52: style: Local variable 'nodes' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/DFS_BM.cpp:5:13: note: Shadowed declaration
+static auto nodes = generateRandomNodes(100000, 2);
+            ^
+benchmark/Utilities.hpp:9:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/Utilities.hpp:23:52: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/DFS_BM.cpp:6:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:23:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/Utilities.hpp:40:62: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/DFS_BM.cpp:6:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:40:62: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/Utilities.hpp:57:27: style: Local variable 'graph_ptr' shadows outer variable [shadowVariable]
+    CXXGRAPH::Graph<int> *graph_ptr = new CXXGRAPH::Graph<int>();
+                          ^
+benchmark/DFS_BM.cpp:7:13: note: Shadowed declaration
+static auto graph_ptr = readGraph("CitHepPh");
+            ^
+benchmark/Utilities.hpp:57:27: note: Shadow variable
+    CXXGRAPH::Graph<int> *graph_ptr = new CXXGRAPH::Graph<int>();
+                          ^
+benchmark/DFS_BM.cpp:29:52: style: Parameter 'state' can be declared with const. However it seems that 'DFS_FromReadedCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void DFS_FromReadedCitHep(benchmark::State &state)
+                                                   ^
+benchmark/DFS_BM.cpp:39:11: note: You might need to cast the function pointer here
+BENCHMARK(DFS_FromReadedCitHep);
+          ^
+benchmark/DFS_BM.cpp:29:52: note: Parameter 'state' can be declared with const
+static void DFS_FromReadedCitHep(benchmark::State &state)
+                                                   ^
+benchmark/Edge_BM.cpp:23:26: style: The scope of the variable 'e' can be reduced. [variableScope]
+    CXXGRAPH::Edge<int> *e;
+                         ^
+benchmark/Edge_BM.cpp:5:47: style: Parameter 'state' can be declared with const. However it seems that 'BM_EdgeCreation' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BM_EdgeCreation(benchmark::State &state)
+                                              ^
+benchmark/Edge_BM.cpp:16:11: note: You might need to cast the function pointer here
+BENCHMARK(BM_EdgeCreation);
+          ^
+benchmark/Edge_BM.cpp:5:47: note: Parameter 'state' can be declared with const
+static void BM_EdgeCreation(benchmark::State &state)
+                                              ^
+benchmark/Edge_BM.cpp:18:66: style: Parameter 'state' can be declared with const. However it seems that 'EdgeCreationDestruction_new_delete' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void EdgeCreationDestruction_new_delete(benchmark::State &state)
+                                                                 ^
+benchmark/Edge_BM.cpp:31:11: note: You might need to cast the function pointer here
+BENCHMARK(EdgeCreationDestruction_new_delete);
+          ^
+benchmark/Edge_BM.cpp:18:66: note: Parameter 'state' can be declared with const
+static void EdgeCreationDestruction_new_delete(benchmark::State &state)
+                                                                 ^
+benchmark/Edge_BM.cpp:33:41: style: Parameter 'state' can be declared with const. However it seems that 'EdgeGetId' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void EdgeGetId(benchmark::State &state)
+                                        ^
+benchmark/Edge_BM.cpp:44:11: note: You might need to cast the function pointer here
+BENCHMARK(EdgeGetId);
+          ^
+benchmark/Edge_BM.cpp:33:41: note: Parameter 'state' can be declared with const
+static void EdgeGetId(benchmark::State &state)
+                                        ^
+benchmark/Edge_BM.cpp:46:47: style: Parameter 'state' can be declared with const. However it seems that 'NodeGetNodePair' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void NodeGetNodePair(benchmark::State &state)
+                                              ^
+benchmark/Edge_BM.cpp:57:11: note: You might need to cast the function pointer here
+BENCHMARK(NodeGetNodePair);
+          ^
+benchmark/Edge_BM.cpp:46:47: note: Parameter 'state' can be declared with const
+static void NodeGetNodePair(benchmark::State &state)
+                                              ^
+benchmark/FloydWarshall_BM.cpp:6:45: style: Parameter 'state' can be declared with const. However it seems that 'BM_FWDirected' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BM_FWDirected(benchmark::State &state)
+                                            ^
+benchmark/FloydWarshall_BM.cpp:32:11: note: You might need to cast the function pointer here
+BENCHMARK(BM_FWDirected);
+          ^
+benchmark/FloydWarshall_BM.cpp:6:45: note: Parameter 'state' can be declared with const
+static void BM_FWDirected(benchmark::State &state)
+                                            ^
+benchmark/FloydWarshall_BM.cpp:35:45: style: Parameter 'state' can be declared with const. However it seems that 'BM_FWNegCycle' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BM_FWNegCycle(benchmark::State &state)
+                                            ^
+benchmark/FloydWarshall_BM.cpp:53:11: note: You might need to cast the function pointer here
+BENCHMARK(BM_FWNegCycle);
+          ^
+benchmark/FloydWarshall_BM.cpp:35:45: note: Parameter 'state' can be declared with const
+static void BM_FWNegCycle(benchmark::State &state)
+                                            ^
+benchmark/FloydWarshall_BM.cpp:55:55: style: Parameter 'state' can be declared with const. However it seems that 'BM_FWUndirectedWeighted' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BM_FWUndirectedWeighted(benchmark::State &state)
+                                                      ^
+benchmark/FloydWarshall_BM.cpp:74:11: note: You might need to cast the function pointer here
+BENCHMARK(BM_FWUndirectedWeighted);
+          ^
+benchmark/FloydWarshall_BM.cpp:55:55: note: Parameter 'state' can be declared with const
+static void BM_FWUndirectedWeighted(benchmark::State &state)
+                                                      ^
+benchmark/FloydWarshall_BM.cpp:76:47: style: Parameter 'state' can be declared with const. However it seems that 'BM_FWNoWeighted' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void BM_FWNoWeighted(benchmark::State &state)
+                                              ^
+benchmark/FloydWarshall_BM.cpp:96:11: note: You might need to cast the function pointer here
+BENCHMARK(BM_FWNoWeighted);
+          ^
+benchmark/FloydWarshall_BM.cpp:76:47: note: Parameter 'state' can be declared with const
+static void BM_FWNoWeighted(benchmark::State &state)
+                                              ^
+benchmark/Utilities.hpp:9:52: style: Local variable 'nodes' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/Graph_BM.cpp:6:13: note: Shadowed declaration
+static auto nodes = generateRandomNodes(100000, 2);
+            ^
+benchmark/Utilities.hpp:9:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+benchmark/Utilities.hpp:23:52: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/Graph_BM.cpp:7:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:23:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+benchmark/Utilities.hpp:40:62: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/Graph_BM.cpp:7:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(100000, nodes);
+            ^
+benchmark/Utilities.hpp:40:62: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::UndirectedEdge<int> *> edges;
+                                                             ^
+benchmark/Graph_BM.cpp:12:45: style: Parameter 'state' can be declared with const. However it seems that 'GraphCreation' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void GraphCreation(benchmark::State &state)
+                                            ^
+benchmark/Graph_BM.cpp:20:11: note: You might need to cast the function pointer here
+BENCHMARK(GraphCreation);
+          ^
+benchmark/Graph_BM.cpp:12:45: note: Parameter 'state' can be declared with const
+static void GraphCreation(benchmark::State &state)
+                                            ^
+benchmark/Graph_BM.cpp:22:39: style: Parameter 'state' can be declared with const. However it seems that 'AddEdge' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void AddEdge(benchmark::State &state)
+                                      ^
+benchmark/Graph_BM.cpp:33:11: note: You might need to cast the function pointer here
+BENCHMARK(AddEdge);
+          ^
+benchmark/Graph_BM.cpp:22:39: note: Parameter 'state' can be declared with const
+static void AddEdge(benchmark::State &state)
+                                      ^
+benchmark/Graph_BM.cpp:52:47: style: Parameter 'state' can be declared with const. However it seems that 'ReadGraphCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void ReadGraphCitHep(benchmark::State &state)
+                                              ^
+benchmark/Graph_BM.cpp:60:11: note: You might need to cast the function pointer here
+BENCHMARK(ReadGraphCitHep);
+          ^
+benchmark/Graph_BM.cpp:52:47: note: Parameter 'state' can be declared with const
+static void ReadGraphCitHep(benchmark::State &state)
+                                              ^
+benchmark/Graph_BM.cpp:100:48: style: Parameter 'state' can be declared with const. However it seems that 'getEdgeSetCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void getEdgeSetCitHep(benchmark::State &state)
+                                               ^
+benchmark/Graph_BM.cpp:109:11: note: You might need to cast the function pointer here
+BENCHMARK(getEdgeSetCitHep);
+          ^
+benchmark/Graph_BM.cpp:100:48: note: Parameter 'state' can be declared with const
+static void getEdgeSetCitHep(benchmark::State &state)
+                                               ^
+benchmark/Graph_BM.cpp:111:48: style: Parameter 'state' can be declared with const. However it seems that 'getNodeSetCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void getNodeSetCitHep(benchmark::State &state)
+                                               ^
+benchmark/Graph_BM.cpp:120:11: note: You might need to cast the function pointer here
+BENCHMARK(getNodeSetCitHep);
+          ^
+benchmark/Graph_BM.cpp:111:48: note: Parameter 'state' can be declared with const
+static void getNodeSetCitHep(benchmark::State &state)
+                                               ^
+benchmark/Graph_BM.cpp:142:50: style: Parameter 'state' can be declared with const. However it seems that 'getAdjMatrixCitHep' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void getAdjMatrixCitHep(benchmark::State &state)
+                                                 ^
+benchmark/Graph_BM.cpp:151:11: note: You might need to cast the function pointer here
+BENCHMARK(getAdjMatrixCitHep);
+          ^
+benchmark/Graph_BM.cpp:142:50: note: Parameter 'state' can be declared with const
+static void getAdjMatrixCitHep(benchmark::State &state)
+                                                 ^
+benchmark/Node_BM.cpp:6:44: style: Parameter 'state' can be declared with const. However it seems that 'NodeCreation' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void NodeCreation(benchmark::State &state)
+                                           ^
+benchmark/Node_BM.cpp:13:11: note: You might need to cast the function pointer here
+BENCHMARK(NodeCreation);
+          ^
+benchmark/Node_BM.cpp:6:44: note: Parameter 'state' can be declared with const
+static void NodeCreation(benchmark::State &state)
+                                           ^
+benchmark/Node_BM.cpp:15:66: style: Parameter 'state' can be declared with const. However it seems that 'NodeCreationDestruction_new_delete' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void NodeCreationDestruction_new_delete(benchmark::State &state)
+                                                                 ^
+benchmark/Node_BM.cpp:24:11: note: You might need to cast the function pointer here
+BENCHMARK(NodeCreationDestruction_new_delete);
+          ^
+benchmark/Node_BM.cpp:15:66: note: Parameter 'state' can be declared with const
+static void NodeCreationDestruction_new_delete(benchmark::State &state)
+                                                                 ^
+benchmark/Node_BM.cpp:26:41: style: Parameter 'state' can be declared with const. However it seems that 'NodeGetId' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void NodeGetId(benchmark::State &state)
+                                        ^
+benchmark/Node_BM.cpp:34:11: note: You might need to cast the function pointer here
+BENCHMARK(NodeGetId);
+          ^
+benchmark/Node_BM.cpp:26:41: note: Parameter 'state' can be declared with const
+static void NodeGetId(benchmark::State &state)
+                                        ^
+benchmark/Node_BM.cpp:36:43: style: Parameter 'state' can be declared with const. However it seems that 'NodeGetData' is a callback function, if 'state' is declared with const you might also need to cast function pointer(s). [constParameterCallback]
+static void NodeGetData(benchmark::State &state)
+                                          ^
+benchmark/Node_BM.cpp:44:11: note: You might need to cast the function pointer here
+BENCHMARK(NodeGetData);
+          ^
+benchmark/Node_BM.cpp:36:43: note: Parameter 'state' can be declared with const
+static void NodeGetData(benchmark::State &state)
+                                          ^
+test/FWTest.cpp:33:17: style: The scope of the variable 'col' can be reduced. [variableScope]
+    int row(0), col(0);
+                ^
+test/FWTest.cpp:39:18: style: Local variable 'key' shadows outer variable [shadowVariable]
+            auto key = std::make_pair(elem1->getUserId(), elem2->getUserId());
+                 ^
+test/FWTest.cpp:30:10: note: Shadowed declaration
+    auto key = std::make_pair(node1.getUserId(), node1.getUserId());
+         ^
+test/FWTest.cpp:39:18: note: Shadow variable
+            auto key = std::make_pair(elem1->getUserId(), elem2->getUserId());
+                 ^
+test/Utilities.hpp:9:52: style: Local variable 'nodes' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+test/PartitionTest.cpp:5:13: note: Shadowed declaration
+static auto nodes = generateRandomNodes(10000, 2);
+            ^
+test/Utilities.hpp:9:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                   ^
+test/Utilities.hpp:22:52: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+test/PartitionTest.cpp:6:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(10000, nodes);
+            ^
+test/Utilities.hpp:22:52: note: Shadow variable
+    std::map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                   ^
+test/PartitionTest.cpp:50:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:72:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:125:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:147:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:200:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:222:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:275:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/PartitionTest.cpp:297:30: style: Consider using std::accumulate algorithm instead of a raw loop. [useStlAlgorithm]
+        totalEdgeInPartition += elem.second->getEdgeSet().size();
+                             ^
+test/RWOutputTest.cpp:15:9: style: The scope of the variable 'randomNumber' can be reduced. [variableScope]
+    int randomNumber;
+        ^
+test/RWOutputTest.cpp:30:9: style: The scope of the variable 'randomNumber1' can be reduced. [variableScope]
+    int randomNumber1;
+        ^
+test/RWOutputTest.cpp:31:9: style: The scope of the variable 'randomNumber2' can be reduced. [variableScope]
+    int randomNumber2;
+        ^
+test/RWOutputTest.cpp:13:62: style: Local variable 'nodes' shadows outer variable [shadowVariable]
+    std::unordered_map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                             ^
+test/RWOutputTest.cpp:43:13: note: Shadowed declaration
+static auto nodes = generateRandomNodes(10000, 2);
+            ^
+test/RWOutputTest.cpp:13:62: note: Shadow variable
+    std::unordered_map<unsigned long, CXXGRAPH::Node<int> *> nodes;
+                                                             ^
+test/RWOutputTest.cpp:28:62: style: Local variable 'edges' shadows outer variable [shadowVariable]
+    std::unordered_map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                             ^
+test/RWOutputTest.cpp:44:13: note: Shadowed declaration
+static auto edges = generateRandomEdges(10000, nodes);
+            ^
+test/RWOutputTest.cpp:28:62: note: Shadow variable
+    std::unordered_map<unsigned long, CXXGRAPH::Edge<int> *> edges;
+                                                             ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
